@@ -175,6 +175,9 @@ const InquiryList = ({ onEdit }) => {
               <TableCell>Assigned To</TableCell>
               <TableCell>Status</TableCell>
               <TableCell>Follow-Up Date</TableCell>
+              
+              <TableCell>Interested Course</TableCell>
+              <TableCell>Description</TableCell>
               <TableCell>Actions</TableCell>
             </TableRow>
           </TableHead>
@@ -184,6 +187,7 @@ const InquiryList = ({ onEdit }) => {
                 <TableCell>{inquiry.studentName}</TableCell>
                 <TableCell>{inquiry.contactNumber}</TableCell>
                 <TableCell>{inquiry.assignedTo}</TableCell>
+                
                 <TableCell>
                   <Select
                     value={inquiry.status}
@@ -197,6 +201,9 @@ const InquiryList = ({ onEdit }) => {
                 <TableCell>
                   {inquiry.followUpDate ? new Date(inquiry.followUpDate).toLocaleDateString() : "N/A"}
                 </TableCell>
+               
+                <TableCell>{inquiry.courseInterested}</TableCell>
+                <TableCell>{inquiry.description}</TableCell>
                 <TableCell>
                   <IconButton color="primary" onClick={() => onEdit(inquiry)}>
                     <Edit />
